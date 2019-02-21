@@ -1,0 +1,40 @@
+.paginator_container {
+    background-color: antiquewhite;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.paginator {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: azure;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    border: 1px solid darkslateblue;
+}
+
+.left_arrow::after{
+    content: '⯇';
+}
+
+.right_arrow::after {
+    content: '⯈';
+}
+
+.paginator:not(.three_dots):hover {
+    background-color: coral;
+    cursor: pointer;
+}
+
+.paginator_container .disable_button {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.paginator_container .pag_selected {
+    background-color: coral;
+}

@@ -1,0 +1,9 @@
+.search_section {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.search_section button {
+    margin-left: 10px;
+}

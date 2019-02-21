@@ -1,0 +1,43 @@
+.loadingScreen {
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    background-color: antiquewhite;
+}
+
+tr:nth-child(2n) {
+    background-color: ghostwhite;
+}
+
+.headerRow {
+    background-color: coral;
+}
+
+th, td {
+    padding: 5px 10px;
+    border: 1px solid darkslateblue;
+}
+
+tr:hover {
+   background-color: coral;
+   cursor: pointer;
+}
+
+input[name='th'] {
+    display: none;
+}
+
+input[name='th'] + label::after{
+    content: " ▼";
+    color: green;
+}
+
+input[name='th']:checked + label::after{
+    content: " ▲";
+    color: red;
+}
