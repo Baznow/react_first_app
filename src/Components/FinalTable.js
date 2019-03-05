@@ -24,15 +24,12 @@ export default class FinalTable extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
-        if (props.isTableShow) {
-            const tableRows = props.data;
-            const pageNum = Math.ceil(tableRows.length / state.rowsPerPage);
-            return {
-                rowsList: tableRows,
-                lastPage: pageNum,
-            };
+        const tableRows = props.data;
+        const pageNum = Math.ceil(tableRows.length / state.rowsPerPage);
+        return {
+            rowsList: tableRows,
+            lastPage: pageNum,
         }
-        return null;
     }
 
     handleSortId = () => {
@@ -139,9 +136,6 @@ export default class FinalTable extends React.Component {
     };
 
     render() {
-        if (!this.props.isTableShow) {
-            return (<table></table>);
-        }
         let rows = [];
         let tableRows = this.state.rowsList;
         for (let i = this.state.startIndex; i < this.state.endIndex; i++) {

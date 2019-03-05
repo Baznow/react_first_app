@@ -8,8 +8,6 @@ export default class App extends React.Component{
         super(props);
         this.state = {
             isBtnFormat: true,
-            tableURL: null,
-            isRenderTable: false,
             lastRowData: null,
         }
     }
@@ -29,9 +27,7 @@ export default class App extends React.Component{
         this.setState({
             isBtnFormat: !isBtnFormatPressed,
             lastRowData: null,
-            searchData: null,
             tableData: jsonData,
-            isRenderTable: true,
         });
     };
 
@@ -77,8 +73,8 @@ export default class App extends React.Component{
                     {this.state.lastRowData}
                 </aside>
                 <main className={'main_section'}>
-                    {this.state.isRenderTable
-                        ? <FinalTable data={this.state.tableData} isTableShow={true} searchData={this.state.searchData} isSearch={this.state.isSearch} callbackSearchLock={this.handleSearchButton} callbackFromApp={this.callbackRowData}/>
+                    {this.state.tableData != null
+                        ? <FinalTable data={this.state.tableData} callbackFromApp={this.callbackRowData}/>
                         : null}
                 </main>
                 <aside className={'side_section'}>
